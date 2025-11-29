@@ -19,17 +19,19 @@ int main()
 	int year = 0;
 
 	printf("승용차 세금 계산 program\n"); printf("\n");
+
 	printf("승용차의 배기량(cc)을 입력하고 Enter>");
 	scanf("%d", &displacement);
+
 	printf("차 구입후 경과년수를 입력하고 Enter>");
 	scanf("%d", &year);
 	printf("\n");
 
 	printf("배기량   : %d cc\n", displacement);
 	printf("경과년도 : %d 년\n", year);
-	printf("세금총액 : %d 원\n", (int)
-		(displacement * tax_rate_by_displacement(displacement)
-			* discount_rate_for_past_year(year)));
+	printf("세금총액 : %d 원\n", (int)(displacement 
+									* tax_rate_by_displacement(displacement) 
+									* discount_rate_for_past_year(year)));
 }
 
 int tax_rate_by_displacement(int D)

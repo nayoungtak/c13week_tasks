@@ -41,6 +41,7 @@ int main()
 {
     int num = -1;
     printf("디지털 숫자 출력 프로그램\n");
+
     printf("0부터 9까지 한자리 정수만 입력\n\n");
     printf("숫자입력 : ");
     if (scanf("%d", &num) != 1 || num < 0 || num > 9) {

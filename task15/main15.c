@@ -28,11 +28,11 @@ Unit conversion_table[10] = {
 };
 
 void convert_units(double value, int num);
-void clear_input_buffer(void);
+
 
 int main(void)
 {
-    double value = 0.0;  // double로 변경
+    double value = 0.0;
     int num = 0;
 
     printf("도량형 환산 프로그램\n\n");
@@ -50,16 +50,14 @@ int main(void)
     printf("9:리\n\n");
 
     printf("단위번호 선택: ");
-
     if (scanf("%d", &num) != 1 || num < 0 || num > 9) {
         printf("잘못된 입력입니다. 0~9 사이의 숫자를 입력해주세요.\n");
         return 1;
-    }
-
-    printf("\n");
+    }printf("\n");
+    
     convert_units(value, num);
 
-    return 0;  // 정상 종료 명시
+    return 0;
 }
 
 void convert_units(double value, int num)
@@ -74,10 +72,4 @@ void convert_units(double value, int num)
         double convertedValue = valueInRi / conversion_table[i].Ri;
         printf("%12s  %15.3f\n", conversion_table[i].name, convertedValue);
     }
-}
-
-void clear_input_buffer(void)
-{
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
 }
